@@ -3,14 +3,25 @@ Converts the Facebook Messenger voice messages from video/mp4 or audio/aac to th
 
 This repository includes the IncomingFacebookVoiceMessage class (receives a voice file from a facebook voice message) and the converter class (converts MP4/AAC to WAV).
 
-## General idea
+The WAV file can then be sent to Bing Speech API because that's the format it understands.
+
+## Requirements
+
+* Azure app service
+* MediaToolKit from nuget
+* FFMPEG.exe binary
+* A bot connected to Microsoft Bot Framework and Facebook Messenger
+
+## Sample implementation
+
+### General idea
 
 * Receives a message from Facebook
 * Downloads the voice file from that message
 * Converts MP4/AAC audio file to WAV using open-source FFMPEG library
 * Sends the WAV file to Bing Speech API to convert speech to text
 
-## Sample implementation
+### Code
 
 `MicrosoftCognitiveSpeechService` is not included. Use Microsoft's samples as a starting point, and modify them as necessary.
 
